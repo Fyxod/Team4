@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Circle</title>
+  <link rel="stylesheet" href="study.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Study Circle</h1>
+    <form id="studyForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="task" placeholder="What are you studying?" required>
+      <input type="number" id="minutes" placeholder="Minutes" required min="1">
+      <button type="submit">Start Study Session</button>
+    </form>
+    <div id="liveBoard" class="board"></div>
+  </div>
+  <script src="study.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@
     justify-content: center;
   }
   
-  /* Container Box */
+  
   .main-container {
     background: white;
     padding: 40px;
@@ -31,7 +31,7 @@
     margin-bottom: 30px;
   }
   
-  /* Side-by-side sections */
+  
   .section-container {
     display: flex;
     gap: 30px;
@@ -39,7 +39,7 @@
     flex-wrap: wrap;
   }
   
-  /* Individual Section Box */
+  
   .box {
     flex: 1 1 400px;
     padding: 20px;
@@ -55,7 +55,7 @@
     color: #444;
   }
   
-  /* List styling */
+  
   .box ul {
     list-style: none;
   }

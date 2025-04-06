@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Gig</title>
+  <link rel="stylesheet" href="mini-gig.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mini Gig Board</h1>
+    <form id="gigForm">
+      <input type="text" id="username" placeholder="Your Username" required>
+      <input type="text" id="taskType" placeholder="Task Type" required>
+      <input type="text" id="description" placeholder="Short Description" required>
+      <input type="number" id="budget" placeholder="Budget" required>
+      <input type="text" id="contact" placeholder="Contact" required>
+      <button type="submit">Post Task</button>
+    </form>
+    <div id="gigList" class="gig-list"></div>
+  </div>
+  <script src="mini-gig.js"></script>
+</body>
+</html>
+
+

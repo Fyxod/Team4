@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opportunities Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Internship & Opportunities</h1>
+    <form id="opportunityForm">
+      <input type="text" id="title" placeholder="Title" required>
+      <select id="type">
+        <option>Internship</option>
+        <option>Hackathon</option>
+        <option>Competition</option>
+        <option>Workshop</option>
+        <option>Fellowship</option>
+        <option>Scholarship</option>
+        <option>Other</option>
+      </select>
+      <textarea id="description" placeholder="Short Description" required></textarea>
+      <input type="date" id="date" required>
+      <input type="url" id="link" placeholder="Apply/Register URL" required>
+      <input type="text" id="contact" placeholder="Contact Info" required>
+      <button type="submit">Post Opportunity</button>
+    </form>
+    <div class="opportunities" id="opportunitiesList"></div>
+  </div>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .opportunities {
+      margin-top: 20px;
+    }
+    .card {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      margin: 0 0 5px;
+    }
+    .card p {
+      margin: 5px 0;
+    }
+    .card button {
+      background: crimson;
+      margin-top: 10px;
+    }
+  </style>
+
+  <script>
+    const form = document.getElementById('opportunityForm')
+    const list = document.getElementById('opportunitiesList')
+    const data = JSON.parse(localStorage.getItem('opportunities') || '[]')
+
+    const render = () => {
+      list.innerHTML = ''
+      data.forEach((item, i) => {
+        const div = document.createElement('div')
+        div.className = 'card'
+        div.innerHTML = `
+          <h3>${item.title} (${item.type})</h3>
+          <p>${item.description}</p>
+          <p><strong>Date:</strong> ${item.date}</p>
+          <p><strong>Link:</strong> <a href="${item.link}" target="_blank">Apply</a></p>
+          <p><strong>Contact:</strong> ${item.contact}</p>
+          <button onclick="remove(${i})">Remove</button>
+        `
+        list.appendChild(div)
+      })
+    }
+
+    const remove = i => {
+      data.splice(i, 1)
+      localStorage.setItem('opportunities', JSON.stringify(data))
+      render()
+    }
+
+    form.onsubmit = e => {
+      e.preventDefault()
+      const newItem = {
+        title: form.title.value,
+        type: form.type.value,
+        description: form.description.value,
+        date: form.date.value,
+        link: form.link.value,
+        contact: form.contact.value
+      }
+      data.push(newItem)
+      localStorage.setItem('opportunities', JSON.stringify(data))
+      render()
+      form.reset()
+    }
+
+    render()
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    font-family: sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    background: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .gig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .gig-card {
+    background: white;
+    padding: 15px;
+    border-left: 5px solid #28a745;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .remove-btn {
+    background: red;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  

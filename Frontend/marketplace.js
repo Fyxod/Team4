@@ -1,4 +1,4 @@
-// Simulated logged-in user
+
 const currentUser = localStorage.getItem('marketUser') || prompt("Enter your username:");
 localStorage.setItem('marketUser', currentUser);
 
@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
 
   const item = {
     id: Date.now(),
-    owner: currentUser, // 🆕 Store owner
+    owner: currentUser, 
     title,
     price,
     contact,
