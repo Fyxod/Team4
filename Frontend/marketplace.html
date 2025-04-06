@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketplace - College Connect</title>
+  <link rel="stylesheet" href="marketplace.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 College Marketplace</h1>
+
+    <form id="itemForm">
+      <input type="text" id="title" placeholder="Item Title" required />
+      <input type="number" id="price" placeholder="Price (₹)" required />
+      <input type="text" id="contact" placeholder="Contact Number" required />
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="Books">Books</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Stationery">Stationery</option>
+        <option value="Others">Others</option>
+      </select>
+      <input type="file" id="image" accept="image/*" required />
+      <button type="submit">Add Item</button>
+    </form>
+
+    <div class="items" id="itemsContainer"></div>
+  </div>
+
+  <script src="marketplace.js"></script>
+</body>
+</html>
