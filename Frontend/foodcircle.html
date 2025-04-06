@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Circle</title>
+  <link rel="stylesheet" href="foodcircle.css"/>
+</head>
+<body>
+  <h1>🍽️ Food Circle</h1>
+
+  <form id="orderForm">
+    <h2>Start a Group Order</h2>
+    <input type="text" placeholder="Restaurant Name" id="restaurant" required />
+    <input type="number" placeholder="Waiting Time (minutes)" id="waitingTime" required />
+    <input type="text" placeholder="Contact Info" id="contact" required />
+    <button type="submit">Post Order</button>
+  </form>
+
+  <h2>Available Group Orders</h2>
+  <div id="ordersContainer" class="orders-grid"></div>
+
+  <script src="foodcircle.js"></script>
+</body>
+</html>
