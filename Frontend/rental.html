@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RentBorrow</title>
+  <link rel="stylesheet" href="rental.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Rent/Borrow/Exchange Items</h1>
+    <form id="itemForm">
+      <input type="text" id="itemName" placeholder="Item Name" required>
+      <select id="itemType" required>
+        <option value="" disabled selected>Select Type</option>
+        <option value="Exchange">Exchange</option>
+        <option value="Borrow">Borrow</option>
+        <option value="Rental">Rental</option>
+      </select>
+      <input type="number" id="rentalPrice" placeholder="Rental Price" style="display: none;">
+      <input type="file" id="itemImage" accept="image/*" required>
+      <input type="text" id="contact" placeholder="Your Contact" required>
+      <button type="submit">Post Item</button>
+    </form>
+
+    <div id="itemsContainer"></div>
+  </div>
+  <script src="rental.js"></script>
+</body>
+</html>
