@@ -12,34 +12,24 @@
   <nav class="navbar">
     <div class="logo">KONECT</div>
     <ul class="nav-links">
-      <li class="dropdown">
-        <a href="#">Amenities</a>
-        <ul class="dropdown-menu">
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/marketplace.html">Marketplace</a></li>
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/rental.html">Rental System</a></li>
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/foodcircle.html">Food Circle</a></li>
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/carpool.html">Transportation Pool</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Academics</a>
-        <ul class="dropdown-menu">
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/mini-gig.html">Mini Gigs</a></li>
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/internship.html">Internships</a></li>
-          <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/study.html">Study Circle</a></li>
-        </ul>
-      </li>
+      <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/marketplace.html" class="nav-button">Marketplace</a></li>
+      <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/rental.html" class="nav-button">Rental System</a></li>
+      <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/foodcircle.html" class="nav-button">Food Circle</a></li>
+      <li><a href="file:///C:/Users/anaha/OneDrive/Desktop/Prototype/Frontend/carpool.html" class="nav-button active">Transportation Pool</a></li>
     </ul>
   </nav>
-  <h1 class="carpool">Transportation Pool</h1>
   <form id="rideForm">
+    <h1>START A NEW POOL</h1>
     <input type="text" id="destination" placeholder="Destination" required>
     <input type="time" id="departureTime" required>
     <input type="text" id="contact" placeholder="Contact Info" required>
     <button type="submit">Post Ride</button>
   </form>
 
-  <div class="rides" id="rideList"></div>
+  <div class="rides-container">
+    <div class="no-rides-message">No Rides Available</div>
+    <div class="rides" id="rideList"></div>
+  </div>
 
   <script src="carpool.js"></script>
 </body>
