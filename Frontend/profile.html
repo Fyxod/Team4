@@ -2,15 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Profile</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: "Segoe UI", sans-serif;
       background: linear-gradient(135deg, #667eea, #764ba2);
       height: 100vh;
+      display: flex;
+      color: white;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .sidebar button,
+    .sidebar a {
+      display: block;
+      width: 100%;
+      padding: 10px 15px;
+      margin: 5px 0;
+      text-align: left;
+      font-size: 16px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .sidebar button:hover,
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-content {
+      display: none;
+      margin-left: 15px;
+    }
+
+    .main-content {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,10 +100,30 @@
   </style>
 </head>
 <body>
-  <div class="profile-container">
-    <h2>Welcome, <span id="username">User</span>!</h2>
-    <p>Email: <span id="email">you@example.com</span></p>
-    <button class="logout-btn" onclick="logout()">Logout</button>
+  <div class="sidebar">
+    <h2>KONECT</h2>
+    <a href="http://127.0.0.1:5500/Frontend/homepage.html">Home</a>
+    <button onclick="toggleDropdown('amenities')">Amenities ▾</button>
+    <div class="dropdown-content" id="amenities">
+      <a href="http://127.0.0.1:5500/Frontend/marketplace.html">Marketplace</a>
+      <a href="http://127.0.0.1:5500/Frontend/carpool.html">Transportation Pool</a>
+      <a href="http://127.0.0.1:5500/Frontend/foodcircle.html">Food Circle</a>
+      <a href="http://127.0.0.1:5500/Frontend/rental.html">Rental/Borrow</a>
+    </div>
+    <button onclick="toggleDropdown('academics')">Academics ▾</button>
+    <div class="dropdown-content" id="academics">
+      <a href="http://127.0.0.1:5500/Frontend/mini-gig.html">Mini Gigs</a>
+      <a href="http://127.0.0.1:5500/Frontend/internship.html">Internship Board</a>
+      <a href="http://127.0.0.1:5500/Frontend/study.html">Digital Study Room</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-container">
+      <h2>Welcome, <span id="username">User</span>!</h2>
+      <p>Email: <span id="email">you@example.com</span></p>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
   </div>
 
   <script>
@@ -69,12 +139,15 @@
       });
 
     function logout() {
-      fetch('/logout')
-        .then(() => {
-          window.location.href = '/login.html';
-        });
+      fetch('/logout').then(() => {
+        window.location.href = '/login.html';
+      });
+    }
+
+    function toggleDropdown(id) {
+      const element = document.getElementById(id);
+      element.style.display = element.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </body>
 </html>
-
