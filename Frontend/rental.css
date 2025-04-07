@@ -52,6 +52,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 20px;
+  z-index: 1000000000000000000;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -70,12 +71,19 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+              0 4px 30px rgba(0, 0, 0, 0.3);
+}
+.container h1{
+  color: #fff;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -90,7 +98,7 @@ input, select, button {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #222;
   color: white;
   cursor: pointer;
 }
