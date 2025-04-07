@@ -1,8 +1,70 @@
 body {
-    font-family: sans-serif;
+    font-family: Gruppo;
     background: #f1f1f1;
     margin: 0;
     padding: 20px;
+    background-image: url(Untitled\ design.png);
+    background-size: cover;
+  }
+  
+  .dropdown{
+    font-size: 30px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    color: #fff;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 20px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background: #222;
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    margin: 0.5rem 0;
+  }
+  
+  .dropdown-menu a {
+    color: white;
+    text-decoration: none;
   }
   
   .container {

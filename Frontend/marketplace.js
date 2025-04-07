@@ -1,74 +1,57 @@
 
-const currentUser = localStorage.getItem('marketUser') || prompt("Enter your username:");
-localStorage.setItem('marketUser', currentUser);
+const form = document.getElementById("itemForm");
+const itemsContainer = document.getElementById("itemsContainer");
 
-const form = document.getElementById('itemForm');
-const itemsContainer = document.getElementById('itemsContainer');
-let items = JSON.parse(localStorage.getItem('marketItems')) || [];
-
-
-localStorage.setItem('marketUser', currentUser);
-
-renderItems();
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const title = document.getElementById('title').value;
-  const price = document.getElementById('price').value;
-  const contact = document.getElementById('contact').value;
-  const category = document.getElementById('category').value;
-  const imageFile = document.getElementById('image').files[0];
-  const image = await toBase64(imageFile);
-
-  const item = {
-    id: Date.now(),
-    owner: currentUser, 
-    title,
-    price,
-    contact,
-    category,
-    image
-  };
-
-  items.push(item);
-  localStorage.setItem('marketItems', JSON.stringify(items));
-  renderItems();
-  form.reset();
-});
-
-function toBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-function renderItems() {
-  itemsContainer.innerHTML = '';
-  items.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-
+function loadItems() {
+  const items = JSON.parse(localStorage.getItem("marketItems")) || [];
+  itemsContainer.innerHTML = "";
+  items.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "card";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
+      <img src="${item.image}" />
       <h3>${item.title}</h3>
-      <p class="price">₹${item.price}</p>
-      <p>📞 ${item.contact}</p>
-      <p>📂 ${item.category}</p>
-      ${item.owner === currentUser
-        ? `<button class="btn" onclick="markAsSold(${item.id})">Mark as Sold</button>`
-        : `<p style="color: gray; font-size: 0.9em;">Posted by ${item.owner}</p>`
-      }
+      <p>₹${item.price}</p>
+      <p><strong>Contact:</strong> ${item.contact}</p>
+      <p><em>${item.category}</em></p>
+      <button class="remove-btn" data-index="${index}">Mark as Sold</button>
     `;
     itemsContainer.appendChild(card);
   });
+
+  document.querySelectorAll(".remove-btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+      const index = e.target.dataset.index;
+      const items = JSON.parse(localStorage.getItem("marketItems")) || [];
+      items.splice(index, 1);
+      localStorage.setItem("marketItems", JSON.stringify(items));
+      loadItems();
+    });
+  });
 }
 
-function markAsSold(id) {
-  items = items.filter(item => item.id !== id);
-  localStorage.setItem('marketItems', JSON.stringify(items));
-  renderItems();
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const reader = new FileReader();
+  const file = document.getElementById("image").files[0];
+  reader.onloadend = () => {
+    const item = {
+      title: document.getElementById("title").value,
+      price: document.getElementById("price").value,
+      contact: document.getElementById("contact").value,
+      category: document.getElementById("category").value,
+      image: reader.result
+    };
+    const items = JSON.parse(localStorage.getItem("marketItems")) || [];
+    items.push(item);
+    localStorage.setItem("marketItems", JSON.stringify(items));
+    form.reset();
+    loadItems();
+  };
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+loadItems();
+
