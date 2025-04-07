@@ -46,6 +46,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 20px;
+  z-index: 10000000000000000;
 }
 
 .dropdown:hover .dropdown-menu {
