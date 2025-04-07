@@ -1,0 +1,35 @@
+<form action="/signup" method="POST">
+  <input type="text" name="username" required>
+  <input type="email" name="email" required>
+  <input type="password" name="password" required>
+  <button type="submit">Sign Up</button>
+</form>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+    
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+    
+      const res = await fetch("/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, password })
+      });
+    
+      const data = await res.json();
+    
+      if (res.ok) {
+        alert("Signup successful!");
+        window.location.href = "/login.html"; // Redirect to login page
+      } else {
+        alert(data.message || "Signup failed");
+      }
+    });
+    </script>
+    
+  

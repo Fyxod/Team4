@@ -1,0 +1,19 @@
+form {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  input, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+  
