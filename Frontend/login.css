@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  .subtitle h2{
+    font-family:Lexend Exa ;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .create h2 {
+    font-family: Lexend Exa;
+  }
+
+  .logo h1{
+    font-family: Poppins;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  /* height: 100vh; */
+
+
+  /* padding: 0;
+  margin: 40px; */
+  border-radius: 20px;
+
+}
+
+body {
+    /* min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-image: url(Untitled\ design.png);
+    background-size: cover;
+  }
+  .container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+
+  .glass-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-family: Lexend Exa;
+  }
+
+  .glass-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+  }
+
+  .glass-container input::placeholder {
+    color: #eee;
+  }
+
+  .glass-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00b894;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .glass-container button:hover {
+    background-color: #019875;
+  }
+
+  .glass-container p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .glass-container p a {
+    color: #00cec9;
+    text-decoration: none;
+  }
