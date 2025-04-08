@@ -101,6 +101,7 @@ input, select, button {
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-family: Lexend Exa;
 }
 
 button {
@@ -117,11 +118,16 @@ button {
 }
 
 .card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+              0 4px 30px rgba(0, 0, 0, 0.3);
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 
 .card img {
   width: 100%;
@@ -148,4 +154,50 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
+.form-container {
+  /* max-width: 300px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  /* -webkit-backdrop-filter: blur(12px); */
+  border: 1px solid;
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+              0 4px 30px rgba(0, 0, 0, 0.3); */
+              font-family: Lexend Exa; 
+              width: 300px;
+              position: fixed;
+              top: 50%;
+              right: 60px;
+              transform: translateY(-50%);
+              background: rgba(255, 255, 255, 0.25);
+              backdrop-filter: blur(15px);
+              padding: 20px;
+              border-radius: 12px;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+              color: #fff;
+              border-color:rgba(255, 255, 255, 0.25) ;
+}
+.form-container h1{
+  font-size: 20px;
+  color: #fff;
+}
+
+.cards-container {
+  max-width: 280px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  font-family: Lexend Exa;
+  color: #fff;
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 
